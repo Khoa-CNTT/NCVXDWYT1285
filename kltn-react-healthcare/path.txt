@@ -1,0 +1,4 @@
+ export PATH=./node_modules/.bin:$PATH
+ echo $PATH
+export PATH="$PATH:/usr/local/bin"
+source ~/.bashrc
