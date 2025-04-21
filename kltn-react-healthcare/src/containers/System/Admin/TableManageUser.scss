@@ -1,0 +1,33 @@
+#TableManageUser {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    // border-radius: 10px;
+    background-color: rgb(70,195,211);
+}
+
+#TableManageUser td,
+#TableManageUser th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    // border-radius: 10px;
+}
+
+#TableManageUser tr:nth-child(even) {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+#TableManageUser tr:hover {
+    // background-color: rgb(70,195,211);
+    border-radius: 10px;
+    
+}
+
+#TableManageUser th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    // background-color: #04AA6D;
+    color: white;
+}

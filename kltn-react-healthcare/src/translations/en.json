@@ -1,0 +1,144 @@
+{
+    "homeheader": {
+        "speciality": "Medical Specialty",
+        "searchdoctor": "Outstanding specialty",
+        "health-facility": "Facility",
+        "select-room": "Outstanding clinic",
+        "doctor1": "Doctor",
+        "select-doctor": "Outstanding doctor",
+        "medical-package": "Medical package",
+        "generalHC": "General health check",
+        "handbook": "Handbook",
+        "handbook-des": "Health handbook",
+        "support": "Support",
+        "welcome": "What's up, ",
+        "appointment-schedule": "Appointment schedule"
+    },
+    "banner": {
+        "title1": "MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "bannerp1": "Specialized examination",
+        "bannerp2": "Remote medical examination",
+        "bannerp3": "General examination",
+        "bannerp4": "Medical test",
+        "bannerp5": "Mental Health",
+        "bannerp6": "Dental examination"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Users",
+            "manage-doctor": "Manage doctors",
+            "manage-admin": "Manage admins",
+            "crud": "Manage User",
+            "crud-redux": "Manage User",
+            "clinic": "Clinics",
+            "manage-clinic": "Manage clinics",
+            "specialty": "Specialty",
+            "manage-specialty": "Manage specialty",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "Manage Doctor's patient",
+            "change-password":"Thay Đổi Mật Khẩu"
+        }
+    },
+    "manage-user": {
+        "add": "Add a new user",
+        "email": "Email",
+        "password": "Password",
+        "last-name": "First name",
+        "first-name": "Last name",
+        "phone": "Phone number",
+        "address": "Address",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Avatar",
+        "save": "Save",
+        "edit": "Update user",
+        "redux":"Manage User",
+        "change-password":"Thay Đổi Mật Khẩu"
+    },
+    "homepage": {
+        "outstanding-doctor": "Outstanding Doctor",
+        "learn-more": "LEARN MORE",
+        "specialty-popular": "Popular specialties",
+        "medical-facility": "Outstanding medical facility"
+    },
+    "manage-schedule": {
+        "title": "Manage doctor's examination plan",
+        "choose-doctor": "Choose doctor",
+        "choose-date": "Choose date",
+        "save": "Save"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-schedule": "No medical appointments for this day, please choose another day!",
+            "choose": "Choose ",
+            "book-free": " and book (free)"
+        },
+        "extra-info-doctor": {
+            "text-address": "Clinic address",
+            "price": "Examination price",
+            "detail": "See details",
+            "hide-detail": "Hide price list",
+            "payment": "The patient can pay the cost in the form of:"
+        },
+        "booking-modal": {
+            "title": "Information to schedule an appointment",
+            "name": "Full-name",
+            "address": "Address",
+            "reason": "Reasons for medical examination",
+            "date": "Date of birth",
+            "gender": "Gender",
+            "btn-close": "Close",
+            "btn-save": "Confirm",
+            "phone": "Phone number",
+            "price-booking": "Free booking",
+            "price":"Examination price",
+            "gioitinh":"Giới Tính"
+        },
+        "specialty-modal": {
+            "learn-more": "Learn more"
+        },
+        "verify-email": {
+            "verify-email-success": "Successful appointment confirmation",
+            "verify-email-failed": "The appointment does not exist or has been confirmed"
+        },
+        "support": {
+            "support-title": "How to chat with HealthCare Support team?",
+            "support-content": "Create a new account, search for support and ask for advice",
+            "click-here": "Click here",
+            "support": "Support"
+        },
+        "appointment-schedule": {
+            "title": "Appointment scheduled",
+            "no-data": "You haven't booked an appointment in this browser yet!",
+            "examination": "Examination",
+            "patient": "Patient",
+            "doctor": "Doctor",
+            "place": "Place of examination",
+            "booked": "Examination booked"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Create more information doctors",
+            "choose-doctor": "Choose a doctor:",
+            "intro": "Introduction information:",
+            "create-button": "Create information",
+            "save-button": "Save information",
+            "price": "Price",
+            "payment": "Payment",
+            "province": "Province",
+            "clinic-name": "Clinic's name",
+            "clinic-address": "Clinic's address",
+            "clinic-note": "Note",
+            "choose-specialty": "Choose a specialty",
+            "choose-clinic": "Choose a clinic"
+        }
+    }
+}

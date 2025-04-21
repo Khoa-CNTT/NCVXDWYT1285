@@ -1,0 +1,72 @@
+div._loading_overlay_wrapper {
+    position: unset;
+
+    ._loading_overlay_overlay {
+        z-index: 100000000;
+    }
+}
+
+.booking-modal-container {
+    .booking-modal-content {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+        .booking-modal-header {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+
+            .left {
+                font-size: 15px;
+                color: #333;
+            }
+
+            .right {
+                float: right;
+                cursor: pointer;
+                font-size: 15px;
+                color: #333;
+                margin-right: 5px;
+            }
+        }
+
+        .booking-modal-contain {
+            height: 100%;
+            padding: 15px;
+        }
+
+        .booking-modal-footer {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+
+            button {
+                border: none;
+                height: 30px;
+                width: auto;
+                border-radius: 3px;
+                padding: 5px 8px;
+            }
+
+            .btn-booking-confirm {
+                background-color: #abde5f;
+                color: #fff;
+
+                :hover {
+                    opacity: 0.9;
+                }
+            }
+
+            .btn-booking-cancel {
+                background-color: #fff;
+                color: #333;
+
+                :hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

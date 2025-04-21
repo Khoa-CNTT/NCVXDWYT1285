@@ -1,0 +1,36 @@
+.guide {
+  .btn-google-map {
+    display: block;
+    background: #ffc419;
+    color: #fff;
+    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 6px 12px;
+
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  h1 {
+    background: #eee;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px;
+  }
+
+  .guide-content {
+    background: #fff;
+    padding: 0 20px 50px;
+  }
+
+  .guide-info {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}

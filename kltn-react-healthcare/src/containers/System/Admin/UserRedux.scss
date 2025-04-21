@@ -1,0 +1,42 @@
+.preview-img-container {
+    display: flex;
+    .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;  
+    }
+
+    .upload-btn-wrapper {
+        // display: flex;    
+
+        .label-upload {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 5px;
+            height: 35px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    
+        .preview-img {
+            border: 1px solid #ddd;
+            width: 257px;
+            height: 108px;
+            background: center center no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: rgb(255,255,255);
+        }
+    }
+}
+

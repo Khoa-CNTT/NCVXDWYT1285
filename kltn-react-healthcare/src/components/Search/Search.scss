@@ -1,0 +1,32 @@
+.resultContainer {
+    width: 470px;
+    height: auto;
+    position: absolute;
+    background-color: white;
+    bottom: 350px;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    p {
+        cursor: pointer;
+        margin: 10px;
+
+        &:hover {
+            color: #abde5f;
+        }
+
+        span {
+            cursor: pointer;
+        }
+    }
+}
+
+.resultContainer.none {
+    display: none;
+}
+
+.resultContainer.block {
+    display: none;
+}

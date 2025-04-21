@@ -1,0 +1,92 @@
+@import "../../styles/common.scss";
+
+.header-container {
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colormain;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    height: 40px;
+    position: relative;
+    .btn-logout {
+        color: $common-text-color;
+        display: flex;
+        line-height: 40px;
+        height: 40px;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            font-size: $base-size + 1px;
+            margin: 0 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .welcome {
+            margin-right: 25px;
+            font-size: 14px;
+            font-weight: 400;
+            font-size: 20px;
+            height: 40px;
+                    
+        }
+
+        .languages {
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+            .language-vi {
+                margin-right: 5px;
+                font-size: 14px;
+                opacity: 0.8;
+                font-weight: 400;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0.2;
+                width: 50px; /* Kích thước nút */
+                height: 40px;
+                border-radius: 10px; 
+                transition: all 0.3s ease-in-out;
+                &.active {
+                    opacity: 1;
+                    color: red;
+                    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Shadow màu trắng sữa */
+                    background-color: #f9f9f9;
+                    span {
+                        color: red;
+                    }
+                }
+            }
+
+            .language-en {
+                margin-right: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                opacity: 0.8;
+                font-weight: 400;
+                font-size: 20px;
+                opacity: 0.2;
+                width: 50px; /* Kích thước nút */
+                height: 40px;
+                border-radius: 10px; 
+                transition: all 0.3s ease-in-out;
+                &.active {
+                    opacity: 1;
+                    color: rgb(64, 191, 237);
+                    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Shadow màu trắng sữa */
+                    background-color: #f9f9f9;
+                    span {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

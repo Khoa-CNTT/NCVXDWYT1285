@@ -1,0 +1,103 @@
+.doctor-extra-info-container {
+    padding-left: 20px;
+
+    .content-up {
+        border-bottom: 1px solid #f4f4f4;
+        padding-bottom: 15px;
+
+        .text-address {
+            text-transform: uppercase;
+            color: #666666;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .name-clinic {
+            font-weight: 700;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        .detail-address {
+            font-weight: 400;
+            color: #333;
+        }
+    }
+
+    .content-down {
+        padding-top: 15px;
+
+        .content-down-flex {
+            display: flex;
+            gap: 5px;
+
+            .span-read-more {
+                color: #abde5f;
+                cursor: pointer;
+            }
+
+            .price {
+                font-weight: bold;
+            }
+        }
+
+        .text-price {
+            text-transform: uppercase;
+            color: #666666;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .title-price {
+            text-transform: uppercase;
+            color: #666666;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .title-price-body {
+            border: 1px solid #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+
+            .detail-info {
+                display: flex;
+                justify-content: space-between;
+
+                .right {
+                    font-weight: bold;
+                }
+
+                .left {
+                    font-weight: bold;
+                }
+            }
+
+            .note {
+                border-bottom: 1px solid #f4f4f4;
+                font-size: 13px;
+                padding-bottom: 5px;
+            }
+
+            .price {
+                font-size: 13px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                .price-payment {
+                    margin-left: 5px;
+                }
+            }
+
+            .price-title {
+                color: #abde5f;
+                cursor: pointer;
+                font-size: 13px;
+
+            }
+        }
+
+
+    }
+}

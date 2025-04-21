@@ -1,0 +1,36 @@
+.detail-specialty-container {
+    .clinic-name {
+        font-size: 25px;
+        color: #abde5f;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+}
+
+.handbook {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    // justify-content: center;
+
+    .hanbook-info {
+        display: flex;
+        
+        span {
+            margin-right: 5px;
+
+            i {
+                &:hover {
+                    color: #abde5f;
+                }
+            }
+        }
+
+        div {
+            width: 1px;
+            border-right: 1px solid #ccc;
+            margin-right: 5px;
+        }
+    }
+}

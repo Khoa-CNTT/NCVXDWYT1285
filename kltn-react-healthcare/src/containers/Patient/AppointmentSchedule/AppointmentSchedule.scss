@@ -1,0 +1,38 @@
+.spp-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .spp-title {
+    color: #4b6229;
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+
+  .spp-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    .spp-item {
+      width: 930px;
+      z-index: 1;
+      margin: 5px 15px 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      padding: 20px 30px;
+      flex-direction: column;
+      display: flex;
+      box-shadow: rgba(32, 33, 36, 0.28) 0px 1px 6px;
+    }
+  }
+
+  .spp-no-data {
+    text-align: center;
+    color: #a94442;
+    font-size: 15px;
+    padding-top: 5px;
+  }
+}

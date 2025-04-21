@@ -1,0 +1,75 @@
+.detail-specialty-container {
+    // background-color: #abde5f;
+
+    .description-specialty {
+        // background-color: rgb(236,255,250) !important;
+        background: linear-gradient(to right, rgb(215, 244, 178), rgb(209, 246, 182)) !important;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        h1,
+        h2,
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .search-sp-doctor {
+        select {
+            outline: none;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #008037;
+            color: #008037;
+            height: 25px;
+            font-weight: 700;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    }
+
+    .detail-specialty-body {
+        padding: 0 150px;
+        background-color: #eeeeee;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .each-doctor {
+        display: flex;
+        width: 100%;
+        min-height: 300px;
+        margin: 15px 0;
+        box-shadow: 0 1px 6px #20212447;
+        background-color: #fff;
+        opacity: 1;
+        border-radius: 8px;
+        border: 1px solid #f4f4f4;
+        padding: 10px;
+
+        .dt-content-left {
+            width: 50%;
+            padding: 5px;
+            border-right: 1px solid #f4f4f4;
+        }
+
+        .dt-content-right {
+            width: 50%;
+            margin-left: 10px;
+
+            .doctor-schedule {}
+
+            .doctor-extra-info {
+                border-top: 1px solid #f4f4f4;
+                margin-top: 10px;
+                padding-top: 10px;
+
+                .doctor-extra-info-container {
+                    padding-left: 0 !important;
+                }
+            }
+        }
+    }
+}

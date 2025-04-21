@@ -1,0 +1,40 @@
+.image-doctor {
+    width: 70px;
+    height: 70px;
+    // border-radius: 50%;
+    border-radius: 8px;
+    // object-fit: cover;
+    background-size: cover;
+    background-color: #eee;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.flex.confirm-modal-content {
+    
+    display: flex !important;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin-top: 4px;
+    background-color: white;
+    .name-doctor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-weight: bold;
+        }
+    }
+}
+
+.gappp.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal-content{
+background-color: #D4F5B3;
+}

@@ -1,0 +1,11 @@
+.specialty-child {
+    cursor: pointer;  
+    text-align: center;
+    font-weight: 600;
+    .specialty-name {
+        padding: 10px 0;
+        &:hover {
+            color: #abde5f;
+        }
+    }
+}

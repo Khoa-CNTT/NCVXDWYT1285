@@ -1,0 +1,242 @@
+.slick-prev {
+    left: -10px !important;
+    z-index: 1000 !important;
+    height: 40px !important;
+    width: 40px !important;
+    border: 2px solid #d7d7d7 !important;
+    background-color: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: 0.2s linear !important;
+
+    &:hover {
+        background: #eceaea !important;
+        left: -15px !important;
+    }
+}
+
+.slick-prev::before,
+.slick-next:before {
+    font-family: FontAwesome !important;
+    color: black !important;
+}
+
+.slick-next {
+    top: 90px !important;
+    right: -5px !important;
+    z-index: 10 !important;
+    height: 40px !important;
+    width: 40px !important;
+    border: 2px solid #d7d7d7 !important;
+    background-color: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: 0.2s linear !important;
+    &:hover {
+        background: #eceaea !important;
+        right: -10px !important;
+    }
+}
+
+// hello
+
+.section-share {
+    &.section-specialty {
+        background-color: #f5f5f5;
+    }
+
+    .section-body {
+        .section-customize {
+            cursor: pointer;
+            margin-left: 8px;
+            .bg-image {
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                width: 278px;
+                height: 190px;
+                background-size: cover;
+                background-color: #eee;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-radius: 20px;
+                border : 1px solid transparent;
+                &.section-specialty {
+                    // background-image: url('../../assets/images/specialty/specialty_1.jpg');
+                }
+
+                &.section-medical-facility {
+                    // background-image: url('../../assets/images/nedicalFacility/medicalSpecility.jpg');
+                }
+
+                &.section-outstanding-doctor {
+                    // background-image: url('../../assets/images/doctor/doctorStrange.jpg');
+                    // width: 120px;
+                    // height: 120px;
+                    // border-radius: 10px;
+                }
+
+                &.section-handbook {
+                    background-image: url('../../assets/images/handbook/handbook1.jpeg');
+                }
+            }
+        }
+    }
+}
+
+.section-share {
+    height: 330px;
+
+    &.section-outstading-doctor {
+        background-color: #f5f5f5;
+    }
+
+    &.section-about {
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .section-container {
+        margin: 0 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .section-header {
+            height: 60px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            button {
+                position: relative;
+                background: transparent;
+                color: rgb(152,215,237);
+                border: 2px solid rgb(152,215,237);
+                padding: 8px 16px;
+                height: 30px;
+                text-align: center;
+                width: auto;
+                line-height: 14px;
+              }
+            
+              button::before,
+              button::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 10%;
+                background: #fff;
+                height: 4px;
+                transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+              }
+            
+              button::before {
+                right: 20%;
+                top: -3px;
+                transform: skewX(-45deg);
+              }
+            
+              button::after {
+                left: 20%;
+                bottom: -3px;
+                transform: skewX(45deg);
+              }
+            
+              button:hover::before {
+                right: 80%;
+              }
+            
+              button:hover::after {
+                left: 80%;
+              }
+
+            
+            // .btn-section {
+            //     margin-right: 6px;
+            //     border: none;
+            //     border-radius: 5px;
+            //     height: 30px;
+            //     background-color: rgb(239, 236, 236);
+            //     transition: 0.2 ease;
+            //     font-size: 12px;
+            //     cursor: pointer;
+
+            //     &:hover {
+            //         background-color: #abde5f;
+            //         color: #fff;
+            //     }
+            // }
+
+        }
+
+
+    }
+
+
+
+    h3 {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section-outstanding-doctor {
+    .outer-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+.section-about {
+    height: 500px !important;
+    padding: 0 100px;
+    
+
+    .section-about-header {
+        padding: 20px 10px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .section-about-content {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+
+        .about-content-left {
+            width: 60%;
+        }
+
+        .about-content-right {
+            width: 40%;
+        }
+    }
+}
+
+.home-footer {
+    text-align: center;
+
+    .more-info {
+        text-decoration: none;
+        color: #abde5f;
+
+        &:hover {
+            color: #333;
+            cursor: pointer;
+        }
+    }
+}
+
+.slick-disabled {
+    display: none !important;
+}

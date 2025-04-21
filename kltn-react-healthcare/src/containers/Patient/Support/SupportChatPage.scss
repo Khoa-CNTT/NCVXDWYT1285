@@ -1,0 +1,32 @@
+.spp-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .spp-title {
+        color: #abde5f;
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .support-button {
+        width: 30px;
+        color: white;
+        background-color: #abde5f;
+        border-radius: 5px;
+        outline: none;
+        padding: 10px;
+        cursor: pointer;
+        height: 30px;
+        border: 1px solid #abde5f;
+
+        &:hover {
+            color: #abde5f;
+            background-color: white;
+            border: 1px solid #abde5f;
+        }
+    }
+}

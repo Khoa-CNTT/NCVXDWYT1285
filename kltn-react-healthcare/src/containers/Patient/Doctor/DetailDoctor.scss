@@ -1,0 +1,89 @@
+.doctor-detail-container {
+    height: auto;
+
+    .intro-doctor {
+        display: flex;
+        margin: 0 100px;
+
+        .content-left {
+            width: 20%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            margin: 10px 20px;
+        }
+
+        .content-right {
+            padding-left: 10px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+
+            .up {
+                font-size: 20x;
+                font-weight: 600;
+                padding-top: 15px;
+            }
+
+            .down {
+                padding-top: 10px;
+
+                .like-share-plugin {
+                    margin: 10px 0 20px 0;
+                }
+            }
+        }
+    }
+
+    .detail-info-doctor {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: rgb(242, 242, 242);
+        margin-bottom: 20px;
+        padding: 20px 120px;
+        border: 1px solid #ccc;
+
+        h1,
+        h2,
+        h3 {
+            font-size: 17px;
+        }
+
+        h5 {
+            color: #333;
+
+            &:hover {
+                color: #abde5f;
+                cursor: context-menu;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .schedule-doctor {
+        margin: 0 100px;
+        display: flex;
+        height: auto;
+
+        .content-left {
+            width: 50%;
+            border-right: 1px solid #f4f4f4;
+        }
+
+        .content-right {
+            width: 50%;
+        }
+    }
+
+    .comment-doctor {
+        padding: 10px 100px;
+    }
+}
