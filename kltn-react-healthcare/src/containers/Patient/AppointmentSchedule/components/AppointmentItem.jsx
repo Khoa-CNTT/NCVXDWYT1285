@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import moment from 'moment';
+import axios from 'axios';
 
 import './AppointmentItem.scss';
 import { LANGUAGES } from '../../../../utils';
@@ -11,6 +12,11 @@ import { withRouter } from 'react-router';
 class AppointmentItem extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showPayment: false,
+      loading: false,
+      error: '',
+    };
   }
 
   handleRedirect = () => {
@@ -22,8 +28,54 @@ class AppointmentItem extends Component {
     }
   };
 
+  handleShowPayment = async () => {
+    // this.setState({ showPayment: true, error: '' });
+    try {
+      const res = await axios.get('/api/payments/momo', {
+        // amount: total,
+        // orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
+      });
+      if (res.data && res.data.payUrl) {
+        window.location.href = res.data.payUrl;
+      } else {
+        this.setState({ error: 'Không lấy được link thanh toán MoMo', loading: false });
+      }
+    } catch (err) {
+      this.setState({ error: 'Thanh toán thất bại', loading: false });
+    }
+  };
+
+  handleHidePayment = () => {
+    this.setState({ showPayment: false, error: '' });
+  };
+
+  handleMomoPayment = async () => {
+    const { data } = this.props;
+    const price = data?.priceData?.valueVi || 0;
+    const bookingFee = 15000;
+    const total = price + bookingFee;
+    this.setState({ loading: true, error: '' });
+    try {
+      const res = await axios.post('/api/payments/momo', {
+        amount: total,
+        orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
+      });
+      if (res.data && res.data.payUrl) {
+        window.location.href = res.data.payUrl;
+      } else {
+        this.setState({ error: 'Không lấy được link thanh toán MoMo', loading: false });
+      }
+    } catch (err) {
+      this.setState({ error: 'Thanh toán thất bại', loading: false });
+    }
+  };
+
   render() {
     const { data, language } = this.props;
+    const { showPayment, loading, error } = this.state;
+    const price = data?.priceData?.valueVi || 0;
+    const bookingFee = 15000;
+    const total = price + bookingFee;
 
     return (
       <div className="spp-sub-item">
@@ -78,6 +130,40 @@ class AppointmentItem extends Component {
           <button className="spp-button" onClick={this.handleRedirect}>
             <FormattedMessage id="patient.appointment-schedule.booked" />
           </button>
+          <button className="spp-button spp-momo" style={{marginTop: 8}} onClick={this.handleShowPayment}>
+            Thanh toán MoMo
+          </button>
+          {showPayment && (
+            <div className="momo-payment-modal">
+              <div className="momo-payment-content">
+                <h4>Hình thức thanh toán</h4>
+                <div>
+                  <input type="radio" checked readOnly /> Thanh toán trực tuyến
+                </div>
+                <div className="momo-payment-summary">
+                  <div className="momo-row">
+                    <span>Giá khám</span>
+                    <span>{price.toLocaleString()}đ</span>
+                  </div>
+                  <div className="momo-row">
+                    <span>Phí đặt lịch</span>
+                    <span>{bookingFee.toLocaleString()}đ</span>
+                  </div>
+                  <div className="momo-row momo-total">
+                    <span>Tổng cộng</span>
+                    <span style={{color: 'red'}}>{total.toLocaleString()}đ</span>
+                  </div>
+                </div>
+                {error && <div className="momo-error">{error}</div>}
+                <div className="momo-payment-actions">
+                  <button onClick={this.handleMomoPayment} disabled={loading}>
+                    {loading ? 'Đang xử lý...' : 'Xác nhận'}
+                  </button>
+                  <button onClick={this.handleHidePayment} style={{marginLeft: 8}}>Hủy</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

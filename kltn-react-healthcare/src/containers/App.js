@@ -8,9 +8,6 @@ import {
   userIsAuthenticated,
   userIsNotAuthenticated,
 } from "../hoc/authentication";
-import Haidang2 from "../routes/Haidang2.js";
-import Thanhloi from "../routes/Thanhloi.js";
-import Haidang from "../routes/Haidang.js";
 import { path } from "../utils";
 import Home from "../routes/Home";
 import Login from "./Auth/Login";
@@ -30,6 +27,7 @@ import DetailHandbook from "./Patient/Handbook/DetailHandbook";
 import UserForm from "./Register/UserForm.js";
 import AppointmentSchedulePage from "./Patient/AppointmentSchedule/AppointmentSchedule.jsx";
 import InstructPage from "./Patient/Instruct/Instruct.jsx";
+import ChatAI from '../components/Chat/ChatAI';
 
 class App extends Component {
   handlePersistorState = () => {
@@ -59,9 +57,6 @@ class App extends Component {
             <div className="content-container">
               <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
                 <Switch>
-                  <Route path={path.THANHLOI} exact component={Thanhloi}/>
-                  <Route path={path.HAIDANG2} exact component={Haidang2}/>
-                  <Route path={path.HAIDANG} exact component={Haidang} />
                   <Route path={path.HOME} exact component={Home} />
                   <Route path={"/register"} exact component={UserForm} />
                   <Route
@@ -123,6 +118,7 @@ class App extends Component {
               pauseOnHover
               theme="light"
             />
+            <ChatAI />
           </div>
         </Router>
       </Fragment>

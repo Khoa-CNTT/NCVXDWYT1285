@@ -72,3 +72,74 @@
     }
   }
 }
+
+.momo-payment-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.momo-payment-content {
+  background: #f2ffe0;
+  border-radius: 8px;
+  padding: 32px 24px 24px 24px;
+  min-width: 340px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  position: relative;
+}
+.momo-payment-content h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #4caf50;
+}
+.momo-payment-summary {
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+  font-size: 15px;
+}
+.momo-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.momo-total {
+  font-weight: bold;
+  font-size: 17px;
+}
+.momo-payment-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.momo-payment-actions button {
+  min-width: 90px;
+  padding: 7px 0;
+  border-radius: 4px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.momo-payment-actions button[disabled] {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+.momo-payment-actions button + button {
+  background: #eee;
+  color: #333;
+  margin-left: 8px;
+}
+.momo-error {
+  color: #e53935;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: right;
+}
