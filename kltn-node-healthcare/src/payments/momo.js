@@ -10,27 +10,22 @@ const ipnUrl = "https://callback.url/notify";
 const requestType = "captureWallet";
 const endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
-/**
- * Tạo thanh toán MoMo
- * @param {*} req 
- * @param {*} res 
- * Body: { amount, orderInfo }
- */
 async function createMoMoPayment(req, res) {
     try {
         const { amount, orderInfo } = req.body;
         if (!amount || !orderInfo) {
+            console.log('Thiếu thông tin gửi đến MoMo:', req.body);
             return res.status(400).json({ message: 'Missing amount or orderInfo' });
         }
+
         const requestId = partnerCode + Date.now();
         const orderId = requestId;
         const extraData = "";
+
         // Raw signature
         const rawSignature = `accessKey=${accessKey}&amount=${amount}&extraData=${extraData}&ipnUrl=${ipnUrl}&orderId=${orderId}&orderInfo=${orderInfo}&partnerCode=${partnerCode}&redirectUrl=${redirectUrl}&requestId=${requestId}&requestType=${requestType}`;
-        // Signature
-        const signature = crypto.createHmac('sha256', secretkey)
-            .update(rawSignature)
-            .digest('hex');
+        const signature = crypto.createHmac('sha256', secretkey).update(rawSignature).digest('hex');
+
         // Request body
         const requestBody = {
             partnerCode,
@@ -44,21 +39,28 @@ async function createMoMoPayment(req, res) {
             extraData,
             requestType,
             signature,
-            lang: 'vi'
+            lang: 'vi',
         };
+
+        console.log('Dữ liệu gửi đến MoMo API:', requestBody);
+
         // Gửi request đến MoMo
         const momoRes = await axios.post(endpoint, requestBody, {
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
         });
-        // Trả về URL thanh toán cho frontend
+
+        console.log('Phản hồi từ MoMo API:', momoRes.data);
+
+        // Trả về URL thanh toán
         if (momoRes.data && momoRes.data.payUrl) {
-            return res.json({ payUrl: momoRes.data.payUrl });
+            return { payUrl: momoRes.data.payUrl };
         } else {
-            return res.status(500).json({ message: 'MoMo payment failed', data: momoRes.data });
+            return { message: 'MoMo payment failed', data: momoRes.data };
         }
     } catch (err) {
-        return res.status(500).json({ message: 'Internal server error', error: err.message });
+        console.error('Lỗi khi tạo URL thanh toán MoMo:', err);
+        return { message: 'Internal server error', error: err.message };
     }
 }
 
-module.exports = { createMoMoPayment }; 
+module.exports = { createMoMoPayment };

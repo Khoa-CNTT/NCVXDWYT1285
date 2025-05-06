@@ -7,6 +7,7 @@ import cors from "cors";
 import cron from "node-cron";
 import patientService from "./services/patientService";
 import aiChatRoute from './routes/aiChatRoute';
+import momoRoute from './routes/momoRoute.js';
 
 require("dotenv").config();
 
@@ -50,6 +51,8 @@ initWebRoutes(app);
 
 app.use('/', aiChatRoute);
 
+
+
 connectDB();
 
 // Cron job re-send mail
@@ -70,3 +73,4 @@ app.listen(port, () => {
   //callback
   console.log("Backend Nodejs is runing on the port : " + port);
 });
+

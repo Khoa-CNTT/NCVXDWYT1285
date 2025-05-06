@@ -29,21 +29,26 @@ class AppointmentItem extends Component {
   };
 
   handleShowPayment = async () => {
-    // this.setState({ showPayment: true, error: '' });
+    const { data } = this.props;
+    const price = data?.priceData?.valueVi || 0;
+    const bookingFee = 15000;
+    const total = price + bookingFee;
+
     try {
-      const res = await axios.get('/api/payments/momo', {
-        // amount: total,
-        // orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
-      });
-      if (res.data && res.data.payUrl) {
-        window.location.href = res.data.payUrl;
-      } else {
-        this.setState({ error: 'Không lấy được link thanh toán MoMo', loading: false });
-      }
+        const res = await axios.post('http://localhost:8080/api/payments/momo', {
+            amount: total,
+            orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
+        });
+
+        if (res.data && res.data.payUrl) {
+            window.location.href = res.data.payUrl; // Redirect đến URL thanh toán MoMo
+        } else {
+            this.setState({ error: 'Không lấy được link thanh toán MoMo', loading: false });
+        }
     } catch (err) {
-      this.setState({ error: 'Thanh toán thất bại', loading: false });
+        this.setState({ error: 'Thanh toán thất bại', loading: false });
     }
-  };
+};
 
   handleHidePayment = () => {
     this.setState({ showPayment: false, error: '' });

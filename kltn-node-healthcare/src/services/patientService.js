@@ -49,9 +49,10 @@ let postBookAppointment = (data) => {
             firstName: data.fullName,
           },
         });
+        console.log(user);
         if (user && user[0]) {
           await db.Booking.findOrCreate({
-            where: { patientId: user[0].id },
+            where: { patientId: user[0].id, doctorId: data.doctorId, date: data.date, timeType: data.timeType }, 
             defaults: {
               statusId: "S1",
               doctorId: data.doctorId,
@@ -159,9 +160,8 @@ let resendBookingAppointment = () => {
           await emailService.resendEmailForPatient({
             email: item?.patientData?.email,
             patientName: item?.patientData?.firstName,
-            time: `${
-              item?.timeTypeDataPatient?.valueVi
-            } - Ngày mai - ${date.replaceAll("-", "/")}`,
+            time: `${item?.timeTypeDataPatient?.valueVi
+              } - Ngày mai - ${date.replaceAll("-", "/")}`,
             doctorName: `${doctor?.data?.firstName} ${doctor?.data?.lastName}`,
             language: "vi",
             status: item?.statusId,

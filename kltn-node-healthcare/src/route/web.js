@@ -7,7 +7,7 @@ import specialtyController from "../controllers/specialtyController";
 import clinicController from "../controllers/clinicController";
 import handbookController from "../controllers/handbookController";
 import authController from "../controllers/authController";
-import paymentsController from "../controllers/paymentController";
+import momoController from "../controllers/momoController";
 
 let router = express.Router();
 
@@ -98,9 +98,9 @@ let initWebRoutes = (app) => {
 
   router.post('/api/auth/forgot-password', authController.handleForgotPassword);
 
-  // payments
-  router.get('/api/payments/momo', paymentsController.handleMomoPayment);
+  // payments momo
+  router.post('/api/payments/momo', momoController.processPayment);
   return app.use("/", router);
 };
 
-module.exports = initWebRoutes;
+export default initWebRoutes;
