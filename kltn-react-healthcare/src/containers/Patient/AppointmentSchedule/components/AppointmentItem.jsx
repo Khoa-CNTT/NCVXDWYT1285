@@ -16,6 +16,7 @@ class AppointmentItem extends Component {
       showPayment: false,
       loading: false,
       error: '',
+      price: 0,
     };
   }
 
@@ -30,25 +31,18 @@ class AppointmentItem extends Component {
 
   handleShowPayment = async () => {
     const { data } = this.props;
-    const price = data?.priceData?.valueVi || 0;
-    const bookingFee = 15000;
-    const total = price + bookingFee;
-
-    try {
-        const res = await axios.post('http://localhost:8080/api/payments/momo', {
-            amount: total,
-            orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
-        });
-
-        if (res.data && res.data.payUrl) {
-            window.location.href = res.data.payUrl; // Redirect đến URL thanh toán MoMo
-        } else {
-            this.setState({ error: 'Không lấy được link thanh toán MoMo', loading: false });
-        }
-    } catch (err) {
-        this.setState({ error: 'Thanh toán thất bại', loading: false });
+    const doctorId = data?.doctorId;
+    let price = 0;
+    if (doctorId) {
+      try {
+        const res = await axios.get(`http://localhost:8080/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`);
+        price = res.data?.data?.priceTypeData?.valueVi ? parseInt(res.data.data.priceTypeData.valueVi, 10) : 0;
+      } catch (e) {
+        price = 0;
+      }
     }
-};
+    this.setState({ showPayment: true, error: '', price });
+  };
 
   handleHidePayment = () => {
     this.setState({ showPayment: false, error: '' });
@@ -56,12 +50,12 @@ class AppointmentItem extends Component {
 
   handleMomoPayment = async () => {
     const { data } = this.props;
-    const price = data?.priceData?.valueVi || 0;
+    const price = this.state.price || 0;
     const bookingFee = 15000;
     const total = price + bookingFee;
     this.setState({ loading: true, error: '' });
     try {
-      const res = await axios.post('/api/payments/momo', {
+      const res = await axios.post('http://localhost:8080/api/payments/momo', {
         amount: total,
         orderInfo: `Thanh toán khám bệnh với bác sĩ ${data?.doctorData?.lastName || ''}`,
       });
@@ -77,8 +71,7 @@ class AppointmentItem extends Component {
 
   render() {
     const { data, language } = this.props;
-    const { showPayment, loading, error } = this.state;
-    const price = data?.priceData?.valueVi || 0;
+    const { showPayment, loading, error, price } = this.state;
     const bookingFee = 15000;
     const total = price + bookingFee;
 
