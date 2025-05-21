@@ -1,6 +1,8 @@
 .spp-sub-item {
   display: flex;
   flex-direction: row;
+  position: relative;
+  z-index: auto;
 
   .spp-item-left {
     display: flex;
@@ -77,7 +79,7 @@
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.3);
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;

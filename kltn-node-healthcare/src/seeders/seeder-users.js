@@ -6,9 +6,9 @@ module.exports = {
       {
         email: "example@example.com",
         password: "123",
-        firstName: "Le Thanh",
-        lastName: "Loi",
-        address: "Quang Tri",
+        firstName: "Tu Minh",
+        lastName: "Hung",
+        address: "Quang Nam",
         gender: 1,
         typeRole: "ROLE",
         keyRole: "R1",
