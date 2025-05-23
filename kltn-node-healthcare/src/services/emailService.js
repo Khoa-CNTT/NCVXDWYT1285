@@ -15,7 +15,7 @@ let sendSimpleEmail = async (dataSend) => {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"HealthCare 🥼 "lethanhloi2001@gmail.com"', // sender address
+    from: '"HealthCare 🥼 "tuminhhung0901@gmail.com"', // sender address
     to: dataSend.reciverEmail, // list of receivers
     subject: 'Thông tin đặt lịch khám bệnh', // Subject line
     html: getBodyHTMLEMAIL(dataSend),
@@ -104,7 +104,7 @@ let sendAttachment = async (dataSend) => {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"HealthCare 🥼 "lethanhloi22042001@gmail.com"', // sender address
+    from: '"HealthCare 🥼 "tuminhhung0901@gmail.com"', // sender address
     to: dataSend.email, // list of receivers
     subject: 'Kết quả đặt lịch khám bệnh', // Subject line
     html: getBodyHTMLEMAILRemedy(dataSend),
@@ -128,14 +128,13 @@ let getBodyHTMLEmailResend = (dataSend) => {
         <div><b>Thời gian: ${dataSend.time}</b></div>
         <div><b>Bác sĩ: ${dataSend.doctorName}</b></div>
 
-        ${
-          dataSend.status === 'S2'
-            ? '<p>Vui lòng đến đúng giờ và nếu có vấn đề gì thì xin vui lòng gọi đến hotline của chúng tôi.</p>'
-            : `<p>Hiện tại bạn chưa xác nhận lịch khám. Vui lòng xác nhận lịch khám ở phía dưới và nếu có vấn đề gì thì xin vui lòng gọi đến hotline của chúng tôi.</p>
+        ${dataSend.status === 'S2'
+        ? '<p>Vui lòng đến đúng giờ và nếu có vấn đề gì thì xin vui lòng gọi đến hotline của chúng tôi.</p>'
+        : `<p>Hiện tại bạn chưa xác nhận lịch khám. Vui lòng xác nhận lịch khám ở phía dưới và nếu có vấn đề gì thì xin vui lòng gọi đến hotline của chúng tôi.</p>
               <div>
                 <a href=${dataSend.redirectLink} target="_blank">Click here!</a>
               </div>`
-        }
+      }
 
         <div>Xin chân thành cảm ơn quý khách đã sử dụng dịch vụ tại HealthCare!</div>
         `;
@@ -148,14 +147,13 @@ let getBodyHTMLEmailResend = (dataSend) => {
         <div><b>Time: ${dataSend.time}</b></div>
         <div><b>Doctor: ${dataSend.doctorName}</b></div>
 
-        ${
-          dataSend.status === 'S2'
-            ? '<p>Please arrive on time and if there are any problems, please call our hotline.</p>'
-            : `<p>You have not confirmed your appointment yet. Please confirm your appointment below and if you have any problems, please call our hotline.</p>
+        ${dataSend.status === 'S2'
+        ? '<p>Please arrive on time and if there are any problems, please call our hotline.</p>'
+        : `<p>You have not confirmed your appointment yet. Please confirm your appointment below and if you have any problems, please call our hotline.</p>
               <div>
                 <a href=${dataSend.redirectLink} target="_blank">Click here!</a>
               </div>`
-        }
+      }
 
         <div>Thank you very much for using the service at HealthCare!</div>
         `;
@@ -178,7 +176,7 @@ let resendEmailForPatient = async (dataSend) => {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"HealthCare 🥼 "lethanhloi22042001@gmail.com"', // sender address
+    from: '"HealthCare 🥼 "tuminhhung0901@gmail.com"', // sender address
     to: dataSend.email, // list of receivers
     subject: 'Nhắc nhở: Lịch khám bệnh tại HealthCare', // Subject line
     html: getBodyHTMLEmailResend(dataSend),
@@ -221,7 +219,7 @@ let sendEmailForgotPassword = async (dataSend) => {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"HealthCare 🥼 "lethanhloi22042001@gmail.com"', // sender address
+    from: '"HealthCare 🥼 "tuminhhung0901@gmail.com"', // sender address
     to: dataSend.email, // list of receivers
     subject: 'Cập nhật lại mật khẩu tại HealthCare', // Subject line
     html: getBodyHTMLEmailForgotPassword(dataSend),
