@@ -121,7 +121,8 @@
             "patient": "Bệnh nhân",
             "doctor": "Bác sĩ",
             "place": "Nơi khám",
-            "booked": "Đã đặt khám"
+            "booked": "Đã đặt khám",
+            "pay-momo": "Thanh toán MoMo"
         }
     },
     "admin": {

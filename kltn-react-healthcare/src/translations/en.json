@@ -121,7 +121,8 @@
             "patient": "Patient",
             "doctor": "Doctor",
             "place": "Place of examination",
-            "booked": "Examination booked"
+            "booked": "Examination booked",
+            "pay-momo": "Pay with MoMo"
         }
     },
     "admin": {

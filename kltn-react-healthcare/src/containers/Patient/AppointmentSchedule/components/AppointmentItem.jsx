@@ -13,8 +13,8 @@ class AppointmentItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPayment: false,
-      loading: false,
+      showPayment: false,//Boolean kiểm soát việc hiển thị/ẩn modal thanh toán MoMo
+      loading: false,//Xác định trạng thái xử lý thanh toán (true = đang xử lý, false = bình thường)
       error: '',
       price: 0,
     };
@@ -23,19 +23,19 @@ class AppointmentItem extends Component {
   handleRedirect = () => {
     if (this.props.history) {
       this.props.history.push({
-        pathname: '/instruct',
-        state: { data: this.props?.data },
+        pathname: '/instruct',//Sử dụng phương thức push của history để chuyển hướng người dùng đến đường dẫn '/instruct'
+        state: { data: this.props?.data },//Truyền dữ liệu cuộc hẹn qua `state` để trang đích có thể truy cập
       });
     }
   };
 
   handleShowPayment = async () => {
     const { data } = this.props;
-    const doctorId = data?.doctorId;
+    const doctorId = data?.doctorId;//Lấy `doctorId` từ props
     let price = 0;
     if (doctorId) {
       try {
-        const res = await axios.get(`http://localhost:8080/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`);
+        const res = await axios.get(`http://localhost:8080/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`);//Gửi request API để lấy thông tin giá khám của bác sĩ
         price = res.data?.data?.priceTypeData?.valueVi ? parseInt(res.data.data.priceTypeData.valueVi, 10) : 0;
       } catch (e) {
         price = 0;
@@ -129,7 +129,7 @@ class AppointmentItem extends Component {
             <FormattedMessage id="patient.appointment-schedule.booked" />
           </button>
           <button className="spp-button spp-momo" style={{marginTop: 8}} onClick={this.handleShowPayment}>
-            Thanh toán MoMo
+            <FormattedMessage id="patient.appointment-schedule.pay-momo" />
           </button>
           {showPayment && (
             <div className="momo-payment-modal">
