@@ -80,6 +80,7 @@ class Comment extends Component {
                     data-href={dataHref}
                     data-width={width ? width : ""}
                     data-numposts={numPost ? numPost : 5}
+                    data-order-by="reverse_time"
                 >
                 </div>
             </>
